@@ -180,7 +180,15 @@ function pull(poolname, amount) {
 		}
 	}
 }
-
+function clear(poolname) {
+	data[poolname+"pullcount"] = 0
+	data[poolname]
+	for (var i = 0; i < data[poolname].length; i++) {
+		if (data[poolname][i].hasOwnProperty("count")) {
+			data[poolname][i].count = 0
+		}
+	}
+}
 function initPool(poolname, poolid) {
 	weightCrawler(poolname, poolid, 1)
 	data[poolname+"weight"] = calcPoolTotalWeight(poolname)
@@ -193,6 +201,7 @@ function setCurrentPoolUI(poolname, pooltext) {
 	+ '<button id="'+poolname+'_pull_10">'+pooltext+' x10</button>'
 	+ '<button id="'+poolname+'_pull_100">'+pooltext+' x100</button>'
 	+ '<button id="'+poolname+'_pull_10000">'+pooltext+' x10000</button>'
+	+ '<button id="'+poolname+'_clear">Clear '+pooltext+' Pulls</button>'
 	u.eleByID(poolname+"_pull_1").onclick = function() {
 		pull(poolname,1)
 	}
@@ -204,6 +213,9 @@ function setCurrentPoolUI(poolname, pooltext) {
 	}
 	u.eleByID(poolname+"_pull_10000").onclick = function() {
 		pull(poolname,10000)
+	}
+	u.eleByID(poolname+"_clear").onclick = function() {
+		clear(poolname)
 	}
 }
 
