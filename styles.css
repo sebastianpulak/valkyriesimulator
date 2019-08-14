@@ -39,11 +39,7 @@ td {
 #simulator {
 	width: 1200px;
 }
-#simulator[data-view="energypool"] #energynav,
-#simulator[data-view="diamondpool"] #diamondnav,
-#simulator[data-view="chestpool"] #chestnav {
-	background-color: rgba(125,125,125,0.7);
-}
+
 
 
 .left {
@@ -161,5 +157,5 @@ td {
 .canhighlight[data-highlight="5612"] .hero-5612,
 .canhighlight[data-highlight="5613"] .hero-5613,
 .canhighlight[data-highlight="5614"] .hero-5614 {
-	background-color: rgba(125,125,125,0.7);
+	background-color: rgba(125,125,125,0.3);
 }
