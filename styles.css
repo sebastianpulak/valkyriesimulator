@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 400;
+    src: local("Segoe UI");
+}
+
+nav ul li {
+	display: inline-block;
+	padding: 3px 10px;
+	cursor: pointer;
+}
+section {
+	font-family: Segoe UI,Arial;
+	font-size: 9pt;
+	float: left;
+	padding: 0 10px;
+}
+
+section:last-child::after {
+	clear: both;
+}
+
+thead, tbody { display: block; }
+
+tbody {
+    height: calc(100vh - 126px);       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+thead th:last-child {
+	padding-right: 20px;
+}
+th {
+	text-align: left;
+}
+td {
+	padding: 1
+}
+#simulator {
+	width: 1200px;
+}
+#simulator[data-view="energypool"] #energynav,
+#simulator[data-view="diamondpool"] #diamondnav,
+#simulator[data-view="chestpool"] #chestnav {
+	background-color: rgba(125,125,125,0.7);
+}
+
+
+.left {
+	width: 610px;
+}
+.right {
+	width: 500px;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.alignright {
+	text-align: right;
+}
+
+.w70 {
+	width: 70px;
+}
+.w120 {
+	width: 120px;
+}
+.w200 {
+	width: 200px;
+}
+
+#lastpulled {
+	font-size: 200%
+}
+
+#logcontainer {
+	height: calc(100vh - 332px);
+	overflow-y: auto;
+}
+.heroentry {
+	padding: 0 2px;
+}
+
+/*Alliance*/
+.hero-5111,.hero-5112,.hero-5113,.hero-5114,.hero-5115,
+.hero-5116,.hero-5117,.hero-5118,.hero-5119,.hero-5120,
+.hero-5123 {
+	color: rgb(51, 125, 255);
+}
+/*Horde*/
+.hero-5211,.hero-5212,.hero-5213,.hero-5214,.hero-5215,
+.hero-5216,.hero-5217,.hero-5218,.hero-5219 {
+	color: #e67e22;
+}
+/*Elf*/
+.hero-5311,.hero-5312,.hero-5313,.hero-5314,.hero-5315,
+.hero-5316,.hero-5317,.hero-5318,.hero-5319 {
+	color: #9b59b6;
+}
+/*Undead*/
+.hero-5411,.hero-5412,.hero-5413,.hero-5414,.hero-5415,
+.hero-5416,.hero-5417,.hero-5418,.hero-5419,.hero-5420 {
+	color: #2ecc71;
+}
+/*Heaven*/
+.hero-5511,.hero-5512,.hero-5513,.hero-5514,.hero-5515 {
+	color: #f1c40f
+}
+/*Hell*/
+.hero-5611,.hero-5612,.hero-5613,.hero-5614 {
+	color: #e74c3c
+}
+
+.canhighlight[data-highlight="5111"] .hero-5111,
+.canhighlight[data-highlight="5112"] .hero-5112,
+.canhighlight[data-highlight="5113"] .hero-5113,
+.canhighlight[data-highlight="5114"] .hero-5114,
+.canhighlight[data-highlight="5115"] .hero-5115,
+.canhighlight[data-highlight="5116"] .hero-5116,
+.canhighlight[data-highlight="5117"] .hero-5117,
+.canhighlight[data-highlight="5118"] .hero-5118,
+.canhighlight[data-highlight="5119"] .hero-5119,
+.canhighlight[data-highlight="5120"] .hero-5120,
+.canhighlight[data-highlight="5123"] .hero-5123,
+.canhighlight[data-highlight="5211"] .hero-5211,
+.canhighlight[data-highlight="5212"] .hero-5212,
+.canhighlight[data-highlight="5213"] .hero-5213,
+.canhighlight[data-highlight="5214"] .hero-5214,
+.canhighlight[data-highlight="5215"] .hero-5215,
+.canhighlight[data-highlight="5216"] .hero-5216,
+.canhighlight[data-highlight="5217"] .hero-5217,
+.canhighlight[data-highlight="5218"] .hero-5218,
+.canhighlight[data-highlight="5219"] .hero-5219,
+.canhighlight[data-highlight="5311"] .hero-5311,
+.canhighlight[data-highlight="5312"] .hero-5312,
+.canhighlight[data-highlight="5313"] .hero-5313,
+.canhighlight[data-highlight="5314"] .hero-5314,
+.canhighlight[data-highlight="5315"] .hero-5315,
+.canhighlight[data-highlight="5316"] .hero-5316,
+.canhighlight[data-highlight="5317"] .hero-5317,
+.canhighlight[data-highlight="5318"] .hero-5318,
+.canhighlight[data-highlight="5319"] .hero-5319,
+.canhighlight[data-highlight="5411"] .hero-5411,
+.canhighlight[data-highlight="5412"] .hero-5412,
+.canhighlight[data-highlight="5413"] .hero-5413,
+.canhighlight[data-highlight="5414"] .hero-5414,
+.canhighlight[data-highlight="5415"] .hero-5415,
+.canhighlight[data-highlight="5416"] .hero-5416,
+.canhighlight[data-highlight="5417"] .hero-5417,
+.canhighlight[data-highlight="5418"] .hero-5418,
+.canhighlight[data-highlight="5419"] .hero-5419,
+.canhighlight[data-highlight="5420"] .hero-5420,
+.canhighlight[data-highlight="5511"] .hero-5511,
+.canhighlight[data-highlight="5512"] .hero-5512,
+.canhighlight[data-highlight="5513"] .hero-5513,
+.canhighlight[data-highlight="5514"] .hero-5514,
+.canhighlight[data-highlight="5515"] .hero-5515,
+.canhighlight[data-highlight="5611"] .hero-5611,
+.canhighlight[data-highlight="5612"] .hero-5612,
+.canhighlight[data-highlight="5613"] .hero-5613,
+.canhighlight[data-highlight="5614"] .hero-5614 {
+	background-color: rgba(125,125,125,0.7);
+}

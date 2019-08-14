@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lol</title>
+	<meta charset=utf-8>
+	<meta name=description content="">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+	<div id="simulator" data-view="energy">
+		<nav>
+		    <ul id="simulatorlist">
+		    	<li><strong>Realest Simulator in the fucking World by</strong></li>
+		    </ul>
+		</nav>
+		<header id="simulatorbuttons">
+			<div id="pullbuttons">
+				<button id="energypool_pull_1">Energy Summon x1</button>
+				<button id="energypool_pull_10">Energy Summon x10</button>
+				<button id="energypool_pull_100">Energy Summon x100</button>
+				<button id="energypool_pull_10000">Energy Summon x10000</button>
+			</div>
+		</header>
+		<section id="simulatortable" class="left">
+			<div id="sim">
+				<table id="pool">
+					<thead>
+						<tr>
+							<th class="w70">Hero ID</th>
+							<th class="w200">Hero Name</th>
+							<th class="w120">Hero %</th>
+							<th class="w70 aligncenter">Pulls</th>
+							<th class="w70 alignright">Pulls %</th>
+						</tr>
+					</thead>
+					<tbody id="poolheroes" class="canhighlight" data-highlight="">
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<section id="logs" class="right">
+			<h3 id="pullcounts"></h3>
+			Last pulled : <span id="lastpulled" onmouseover="highlightHero(this)" data-heroid="0"></span>
+			<div id="logcontainer" class="canhighlight" data-highlight="">
+				
+			</div>
+		</section>
+	</div>
+	
+	<script src="scripts.js" type="module"></script>
+</body>
+</html>
