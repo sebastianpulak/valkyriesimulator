@@ -39,11 +39,11 @@ var settings = {
 		pooltext: "Friend Summon",
 		poolid: 3
 	},
-	{
+/*	{
 		poolname: "lulpool",
 		pooltext: "What Summon",
 		poolid: 5
-	},
+	},*/
 	{
 		poolname: "diamondwarriorpool",
 		pooltext: "Diamond Key - Warrior",
