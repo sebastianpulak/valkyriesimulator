@@ -72,7 +72,7 @@ td {
 }
 
 #logcontainer {
-	height: calc(100vh - 332px);
+	height: calc(100vh - 350px);
 	overflow-y: auto;
 }
 .heroentry {
