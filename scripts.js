@@ -14,6 +14,7 @@ Array.prototype.sum = function (prop) {
 var settings = {
 	showlog: true,
 	logmaxentry: 500,
+	repeat: false,
 	pools: [{
 		poolname: "energypool",
 		pooltext: "Energy Summon",
@@ -169,8 +170,10 @@ function pullEntry(poolname, heroid) {
 	data[poolname+"pullcount"]++
 }
 function printEntry(heroid) {
-	let msg = "<span class=\"heroentry hero-"+heroid+"\" onmouseover=\"highlightHero(this)\" data-heroid=\""+heroid+"\">"+heroNameByID(heroid)+"</span> "
-	data.log += msg
+	if (!settings.repeat) {
+		let msg = "<span class=\"heroentry hero-"+heroid+"\" onmouseover=\"highlightHero(this)\" data-heroid=\""+heroid+"\">"+heroNameByID(heroid)+"</span> "
+		data.log += msg
+	}
 	data.logcount++
 }
 
@@ -241,14 +244,14 @@ function updatePoolResult(poolname) {
 			let heroid = data[poolname][i].heroid
 			let count = data[poolname][i].count
 			let elementID = poolname+"-pulls-"+heroid
-			u.updateTextByID(elementID, count)
+			u.updateTextByID(elementID, count.toLocaleString())
 
 			let elementIDpercent = poolname+"-pullspercent-"+heroid
 			let pullspercent = u.percent( count / data[poolname+"pullcount"], 6)
 			u.updateTextByID(elementIDpercent, pullspercent+"%")
 		}
 	}
-	u.updateTextByID(poolname+"pullcount", data[poolname+"pullcount"].toString())
+	u.updateTextByID(poolname+"pullcount", data[poolname+"pullcount"].toLocaleString())
 	/* highlight hero id */
 	u.updateAttributeByID("poolheroes", "data-highlight", data.highlighthero)
 	u.updateAttributeByID("logcontainer", "data-highlight", data.highlighthero)
@@ -256,6 +259,13 @@ function updatePoolResult(poolname) {
 	if (data.lastpulledheroid) {
 		u.updateTextByID("lastpulled", "<span class=\"hero-"+data.lastpulledheroid+"\">"+heroNameByID(data.lastpulledheroid)+"</span>")
 		u.updateAttributeByID("lastpulled", "data-heroid", data.lastpulledheroid)
+	}
+
+	/* auto pull */
+	if (settings.repeat) {
+		u.updateTextByID("autopullbutton", "Auto pull is ON")
+	} else {
+		u.updateTextByID("autopullbutton", "Auto pull is OFF")
 	}
 	
 }
@@ -322,6 +332,9 @@ function initAll() {
 		/* calculate data */
 		initPool(poolname, poolid)
 
+		u.eleByID("autopullbutton").onclick = function() {
+			settings.repeat = !settings.repeat
+		}
 	}
 	/* set the default table */
 	data.selectedpool = data.defaultpoolname
@@ -333,7 +346,13 @@ function initAll() {
 		updatePoolResult(data.selectedpool)
 		updateLog()
 	}
+	var autoPullLoop = function () {
+		if (settings.repeat) {
+			pull(data.selectedpool,200000)
+		}
+	}
 	let _updateUIId = setInterval(updateUI, 1000 / 5)
+	let _autoPullLoopId = setInterval(autoPullLoop, 1000 / 500)
 }
 
 initAll()
