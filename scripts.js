@@ -171,7 +171,7 @@ function pullEntry(poolname, heroid) {
 }
 function printEntry(heroid) {
 	if (!settings.repeat) {
-		let msg = "<span class=\"heroentry hero-"+heroid+"\" onmouseover=\"highlightHero(this)\" data-heroid=\""+heroid+"\">"+heroNameByID(heroid)+"</span> "
+		let msg = "<span class=\"heroentry hero-"+heroid+"\" onmouseout=\"stopHighlightHero()\" onmouseover=\"highlightHero(this)\" data-heroid=\""+heroid+"\">"+heroNameByID(heroid)+"</span> "
 		data.log += msg
 	}
 	data.logcount++
@@ -257,7 +257,7 @@ function updatePoolResult(poolname) {
 	u.updateAttributeByID("logcontainer", "data-highlight", data.highlighthero)
 	/* last pulled */
 	if (data.lastpulledheroid) {
-		u.updateTextByID("lastpulled", "<span class=\"hero-"+data.lastpulledheroid+"\">"+heroNameByID(data.lastpulledheroid)+"</span>")
+		u.updateTextByID("lastpulled", "<span class=\"hero-"+data.lastpulledheroid+"\" onmouseout=\"stopHighlightHero()\">"+heroNameByID(data.lastpulledheroid)+"</span>")
 		u.updateAttributeByID("lastpulled", "data-heroid", data.lastpulledheroid)
 	}
 
@@ -290,6 +290,10 @@ function updateLog() {
 
 document.highlightHero = function (that) {
   data.highlighthero = that.getAttribute("data-heroid")
+}
+
+document.stopHighlightHero = function () {
+	data.highlighthero = 0;
 }
 
 function createLI(id,text) {
