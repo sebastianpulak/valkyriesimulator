@@ -20,6 +20,31 @@ var settings = {
 		poolid: 4
 	},
 	{
+		poolname: "commonchestpool",
+		pooltext: "Common Chest",
+		poolid: 1
+	},
+	{
+		poolname: "grandchestpool",
+		pooltext: "Grand Summon",
+		poolid: 2
+	},
+	{
+		poolname: "grandchesteventpool",
+		pooltext: "Grand Summon during Event",
+		poolid: 34
+	},
+	{
+		poolname: "friendpool",
+		pooltext: "Friend Summon",
+		poolid: 3
+	},
+	{
+		poolname: "lulpool",
+		pooltext: "What Summon",
+		poolid: 5
+	},
+	{
 		poolname: "diamondwarriorpool",
 		pooltext: "Diamond Key - Warrior",
 		poolid: 501
@@ -43,21 +68,6 @@ var settings = {
 		poolname: "diamondclericpool",
 		pooltext: "Diamond Key - Cleric",
 		poolid: 505
-	},
-	{
-		poolname: "commonchestpool",
-		pooltext: "Common Chest",
-		poolid: 1
-	},
-	{
-		poolname: "grandchestpool",
-		pooltext: "Grand Summon",
-		poolid: 2
-	},
-	{
-		poolname: "friendpool",
-		pooltext: "Friend Summon",
-		poolid: 3
 	}]
 }
 
